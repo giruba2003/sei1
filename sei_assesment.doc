@@ -1,0 +1,26 @@
+There are 3 major use case scenarios we have to consider in this problem
+
+1) Maximum number of possible duplicates in this case is n-1(Worst case)
+2) The Minimum number of duplicate is 1 (Best case)
+3) The average scenario (1:1)
+
+Method 1 : public static int[] retainInsertionOrder(int[] args):
+
+Linked HashSet help to avoid duplicate being added to the unique array
+Since the collection object is used to store the unique elements, the primitive data type Int will be converted into wrapper class Integer and stored into LinkedHashSet which will consume little memory
+Though this is memory consuming process, the array will be iterated only once to solve the purpose of retaining the insertion order and remove the duplicate.
+This is suitable for the average scenario 
+
+Method 2:  public  static int[] removeDuplicate(int withDuplicate[])
+
+This implementation iterates thru the Array many times to identify the duplicates
+Depends on the length of the array , this implementation will consume time in identifying duplicates
+If the size of the array is big and if the duplicates are in the last index, then this implementation has to iterate till last to identify the duplicate
+To overcome this issue, retaining the insertion order should be compromised and the arrays need to be sorted before identifying the duplicates. That way the number of iteration will be less in identifying Duplicates
+This is suitable for the Best case scenario
+
+Method 3: public static int[] sortedAndUniqueData(int[] arr)
+
+ This implementation provides the sorted and unique data together. It leverage the Arrays.sort method to sort the  data which is best quick sort. Also the iteration will be very less as the data will be sorted and arranged next to each other. This method is suitable for the worst case scenario  where the duplicate is more 
+
+
